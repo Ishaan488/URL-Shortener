@@ -1,14 +1,15 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import "dotenv/config";
 import { shortenUrl,redirect } from './Controllers/url.js'
 
 const app = express();
 
 app.use(express.urlencoded({extended:true}));
 
-const connectionString=""; //*Enter your connection string here.
+// const connectionString=""; //*Enter your connection string here.
 
-mongoose.connect(`${connectionString}`, {
+mongoose.connect(`${process.env.connectionString}`, {
     dbName: "URL_Shortener"
 }).then(() => { console.log("MongoDB Connected.") }).catch((error) => { console.log(error) });
 

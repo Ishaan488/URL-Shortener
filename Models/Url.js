@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 
 const UrlSchema=new mongoose.Schema({
-    longUrl:String,
+    longUrl:{
+        type:String,
+        required:[true,"Long URL is reuired"]
+    },
     shortCode:String
 })
 

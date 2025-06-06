@@ -19,6 +19,6 @@ app.get('/', (req, res) => {
 
 app.post('/shorten', shortenUrl);
 
-app.get('/:shortenedUrl',redirect);
+app.get('/:shortCode',redirect);
 const port = 3000;
 app.listen(port, () => { console.log(`Server is running on port ${port}`) });

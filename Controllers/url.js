@@ -6,7 +6,7 @@ export const shortenUrl=async (req,res)=>{
     const shortCode=shortid.generate();
 
 
-    const shortUrl=`http://localhost:3000/${shortCode}`;
+    const shortUrl=`https://url-shortener-tfkt.onrender.com/${shortCode}`;
     const newUrl=new UrlData({longUrl,shortCode})
     await newUrl.save();
 
